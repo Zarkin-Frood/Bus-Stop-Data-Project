@@ -60,7 +60,7 @@ class BusStopService:
             features.extend(page)
             offset += len(page)
         else:
-            print(f"WARNING: stopped after {self.MAX_PAGES} pages; results may be incomplete")
+            self.logger.warning(f"WARNING: stopped after {self.MAX_PAGES} pages; results may be incomplete")
         return features
 
     # ---------- parsing ----------
@@ -79,7 +79,7 @@ class BusStopService:
         if features:
             # Handy for checking that the field names below match the real layer.
             first_props = features[0].get("properties") or {}
-            print("Stop fields:", sorted(first_props.keys()))
+            self.logger.info("Stop fields:", sorted(first_props.keys()))
 
         for feature in features:
             stats["total"] += 1
@@ -108,7 +108,7 @@ class BusStopService:
             stats["kept"] += 1
 
         self.last_load_stats = stats
-        print(f"Stops: kept {stats['kept']} of {stats['total']} features "
+        self.logger.info(f"Stops: kept {stats['kept']} of {stats['total']} features "
               f"(wrong route: {stats['wrong_route']}, no coordinates: {stats['no_coords']})")
         return stops
 
