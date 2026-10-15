@@ -1,0 +1,75 @@
+2026-10-15 15:19:57,905 CRITICAL busstop.uncaught: Uncaught exception
+Traceback (most recent call last):
+  File "src/main.py", line 75, in <module>
+    main()
+  File "src/main.py", line 71, in main
+    run_server(app_features, message_board, app_log.get("webapp"))
+  File "C:\Users\Owner\Google Drive\HCC\Python\BusStopCrimeData\src\web_app.py", line 69, in run_server
+    server = HTTPServer((host, port), WebApp)
+  File "C:\Users\Owner\anaconda3\lib\socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "C:\Users\Owner\anaconda3\lib\http\server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "C:\Users\Owner\anaconda3\lib\socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+TypeError: str, bytes or bytearray expected, not Logger
+2026-10-15 15:33:32,859 CRITICAL busstop.uncaught: Uncaught exception
+Traceback (most recent call last):
+  File "src/main.py", line 75, in <module>
+    main()
+  File "src/main.py", line 71, in main
+    run_server(app_features, message_board, app_log.get("webapp"))
+  File "C:\Users\Owner\Google Drive\HCC\Python\BusStopCrimeData\src\web_app.py", line 69, in run_server
+    server = HTTPServer((host, port), WebApp)
+  File "C:\Users\Owner\anaconda3\lib\socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "C:\Users\Owner\anaconda3\lib\http\server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "C:\Users\Owner\anaconda3\lib\socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+TypeError: str, bytes or bytearray expected, not Logger
+2026-10-15 15:36:58,207 CRITICAL busstop.uncaught: Uncaught exception
+Traceback (most recent call last):
+  File "src/main.py", line 75, in <module>
+    main()
+  File "src/main.py", line 71, in main
+    run_server(app_features, message_board, app_log.get("webapp"))
+  File "C:\Users\Owner\Google Drive\HCC\Python\BusStopCrimeData\src\web_app.py", line 69, in run_server
+    server = HTTPServer((host, port), WebApp)
+  File "C:\Users\Owner\anaconda3\lib\socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "C:\Users\Owner\anaconda3\lib\http\server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "C:\Users\Owner\anaconda3\lib\socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+TypeError: str, bytes or bytearray expected, not Logger
+2026-10-15 15:37:16,643 CRITICAL busstop.uncaught: Uncaught exception
+Traceback (most recent call last):
+  File "src/main.py", line 75, in <module>
+    main()
+  File "src/main.py", line 71, in main
+    run_server(app_features, message_board, app_log.get("webapp"))
+  File "C:\Users\Owner\Google Drive\HCC\Python\BusStopCrimeData\src\web_app.py", line 69, in run_server
+    server = HTTPServer((host, port), WebApp)
+  File "C:\Users\Owner\anaconda3\lib\socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "C:\Users\Owner\anaconda3\lib\http\server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "C:\Users\Owner\anaconda3\lib\socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+TypeError: str, bytes or bytearray expected, not Logger
+2026-10-15 15:38:50,930 CRITICAL busstop.uncaught: Uncaught exception
+Traceback (most recent call last):
+  File "src/main.py", line 75, in <module>
+    main()
+  File "src/main.py", line 71, in main
+    run_server(app_features, message_board, app_log.get("webapp"))
+  File "C:\Users\Owner\Google Drive\HCC\Python\BusStopCrimeData\src\web_app.py", line 69, in run_server
+    server = HTTPServer((host, port), WebApp)
+  File "C:\Users\Owner\anaconda3\lib\socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "C:\Users\Owner\anaconda3\lib\http\server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "C:\Users\Owner\anaconda3\lib\socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+TypeError: str, bytes or bytearray expected, not Logger

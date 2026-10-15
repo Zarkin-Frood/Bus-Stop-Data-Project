@@ -5,6 +5,7 @@ import urllib.request
 from datetime import date, datetime, timedelta
 from io import StringIO
 import logging
+import ssl
 
 NIBRS_2025_URL = "https://www.houstontx.gov/police/cs/xls/NIBRSPublicView2025.csv"
 
@@ -66,14 +67,15 @@ class CrimeStatsService:
               f"(outside window: {s['outside_window']}, bad date: {s['bad_date']}, "
               f"bad coords: {s['bad_coords']}, other: {s['other']})")
         if s["kept"] == 0 and s["total"] > 0:
-            self.logger.warning("WARNING: no crimes kept. CSV columns were:", reader.fieldnames)
+            self.logger.warning(f"WARNING: no crimes kept. CSV columns were: {reader.fieldnames}")
 
     def _fetch_text(self):
         """Return the CSV text, using a disk cache so we don't re-download every run."""
         if self._cache_is_fresh():
-            self.logger.info("Using cached crime data:", self.cache_path)
+            self.logger.info(f"Using cached crime data: {self.cache_path}")
             return self._read_cache()
         try:
+            ssl._create_default_https_context = ssl._create_unverified_context
             with urllib.request.urlopen(self.url, timeout=60) as resp:
                 raw = resp.read()
         except Exception as e:

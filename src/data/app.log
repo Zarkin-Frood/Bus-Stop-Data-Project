@@ -1,0 +1,6 @@
+2026-10-15 15:23:50,001 INFO    busstop: === LOADING DATA ===
+2026-10-15 15:24:02,116 INFO    busstop.crime: Crimes: kept 237011 of 240696 rows (outside window: 0, bad date: 0, bad coords: 3685, other: 0)
+2026-10-15 15:24:02,144 INFO    busstop: Loaded 0 stops, 237011 crimes
+2026-10-15 15:25:01,199 INFO    busstop: === LOADING DATA ===
+2026-10-15 15:25:08,656 INFO    busstop.crime: Crimes: kept 237011 of 240696 rows (outside window: 0, bad date: 0, bad coords: 3685, other: 0)
+2026-10-15 15:25:08,676 INFO    busstop: Loaded 0 stops, 237011 crimes

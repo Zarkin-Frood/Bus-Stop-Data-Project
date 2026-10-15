@@ -80,7 +80,7 @@ class BusStopService:
         if features:
             # Handy for checking that the field names below match the real layer.
             first_props = features[0].get("properties") or {}
-            self.logger.info("Stop fields:", sorted(first_props.keys()))
+            self.logger.info(f"Stop fields: {sorted(first_props.keys())}")
 
         for feature in features:
             stats["total"] += 1

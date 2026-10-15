@@ -1,0 +1,7 @@
+2026-10-15 15:41:00,565 INFO    busstop: === LOADING DATA ===
+2026-10-15 15:41:01,178 INFO    busstop.busstop: Stop fields: ['ADAComp', 'ATSTREET', 'ATT_DATE', 'BENCH', 'BLOCK', 'BN_QUAN', 'BSI_DIST', 'BSI_ID', 'CHG_PERS', 'COMMENT', 'CURR_EDIT', 'DIR_P', 'DIR_S', 'FAREZONEID', 'GPS_DATE', 'GPS_STAT', 'GlobalID', 'IN_SERVICE', 'LAT', 'LON', 'OBJECTID', 'OBJECTID_1', 'ONSTREET', 'POINT_X', 'POINT_Y', 'RT_LAYOVER', 'SHELTER', 'SH_BENCH', 'SH_QUAN', 'SOURCE', 'SPOT', 'SRVD_RTS', 'SRVD_RTS_O', 'STATUS', 'STOPABBR', 'STOPNAME', 'STREET', 'STYPE', 'TO_DELETE', 'TR_CAN', 'TR_DIR', 'TR_QUAN', 'WITH_BNCH', 'WITH_KIOSK', 'WITH_SHLTR', 'WITH_TCAN', 'X1_DIR_P', 'X1_DIR_S', 'X1_STRT', 'X1_STYPE', 'X2_DIR_P', 'X2_DIR_S', 'X2_STRT', 'X2_STYPE', 'ZIP', 'created_da', 'created_us', 'last_edi_1', 'last_edite']
+2026-10-15 15:41:01,184 INFO    busstop.busstop: Stops: kept 214 of 214 features (wrong route: 0, no coordinates: 0)
+2026-10-15 15:41:01,184 INFO    busstop.crime: Using cached crime data: data/nibrs_cache.csv
+2026-10-15 15:41:07,703 INFO    busstop.crime: Crimes: kept 237011 of 240696 rows (outside window: 0, bad date: 0, bad coords: 3685, other: 0)
+2026-10-15 15:41:07,721 INFO    busstop: Loaded 214 stops, 237011 crimes
+2026-10-15 15:41:07,731 INFO    busstop.webapp: Listening on http://0.0.0.0:8000

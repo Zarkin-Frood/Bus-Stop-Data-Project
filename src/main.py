@@ -49,7 +49,7 @@ def main():
         bus_stop_service.load_route_82()
     except Exception as e:
         initial_ok = False
-        app_log.exception("Bus stop load failed:", e)
+        app_log.exception(f"Bus stop load failed: {e}")
     try:
         crime_stats_service.load_recent()
     except Exception as e:
@@ -68,7 +68,7 @@ def main():
     t.start()
 
     app_features = AppFeatures(bus_stop_service, crime_stats_service)
-    run_server(app_features, message_board, app_log.get("webapp"))
+    run_server(app_features, message_board, logger=app_log.get("webapp"))
 
 
 if __name__ == "__main__":
