@@ -54,7 +54,7 @@ def main():
         crime_stats_service.load_recent()
     except Exception as e:
         initial_ok = False
-        app_log.exceptio("Crime load failed:", e)
+        app_log.exception("Crime load failed:", e)
     app_log.info(f"Loaded {len(bus_stop_service.get_stops())} stops, "
           f"{len(crime_stats_service.get_crimes())} crimes")
 

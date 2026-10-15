@@ -1,3 +1,6 @@
 .spyproject/
 __pycache__/
 *.pyc
+data
+*.log
+console_output.txt
