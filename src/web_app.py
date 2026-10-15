@@ -63,9 +63,9 @@ class WebApp(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(html)
 
-def run_server(app_features, message_board, host="0.0.0.0", port=8000):
+def run_server(app_features, message_board, host="0.0.0.0", port=8000, logger=None):
     WebApp.app_features = app_features
     WebApp.message_board = message_board
     server = HTTPServer((host, port), WebApp)
-    print(f"Listening on http://{host}:{port}")
+    logger.info(f"Listening on http://{host}:{port}")
     server.serve_forever()

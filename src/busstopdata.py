@@ -17,11 +17,12 @@ class BusStopService:
     PAGE_SIZE = 1000   # ArcGIS caps results per request, so we page through them
     MAX_PAGES = 50     # safety stop so a misbehaving server can't loop us forever
 
-    def __init__(self, api_client, endpoint=STOP_ENDPOINT):
+    def __init__(self, api_client, endpoint=STOP_ENDPOINT, logger=None):
         self.api_client = api_client
         self.endpoint = endpoint
         self.stops = []
         self.last_load_stats = {}
+        self.logger = logger    
 
     def load_route_82(self):
         self.load_route("82")

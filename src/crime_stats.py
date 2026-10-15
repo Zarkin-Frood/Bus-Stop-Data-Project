@@ -33,7 +33,8 @@ class CrimeRecord:
 class CrimeStatsService:
     def __init__(self, start_date=date(2025, 1, 1), end_date=None,
                  recent_days=None, url=NIBRS_2025_URL,
-                 cache_path="data/nibrs_cache.csv", cache_max_age_hours=24):
+                 cache_path="data/nibrs_cache.csv", cache_max_age_hours=24, 
+                 logger=None):
         """
         By default the window is fixed: start_date through end_date (inclusive,
         or open-ended if end_date is None).
@@ -50,6 +51,7 @@ class CrimeStatsService:
         self.cache_max_age_hours = cache_max_age_hours
         self.crimes = []
         self.last_load_stats = {}
+        self.logger = logger
 
     # ---------- loading ----------
 
@@ -59,23 +61,23 @@ class CrimeStatsService:
         self.crimes = self._parse_rows(reader)
 
         s = self.last_load_stats
-        print(f"Crimes: kept {s['kept']} of {s['total']} rows "
+        self.logger.info(f"Crimes: kept {s['kept']} of {s['total']} rows "
               f"(outside window: {s['outside_window']}, bad date: {s['bad_date']}, "
               f"bad coords: {s['bad_coords']}, other: {s['other']})")
         if s["kept"] == 0 and s["total"] > 0:
-            print("WARNING: no crimes kept. CSV columns were:", reader.fieldnames)
+            self.logger.warning("WARNING: no crimes kept. CSV columns were:", reader.fieldnames)
 
     def _fetch_text(self):
         """Return the CSV text, using a disk cache so we don't re-download every run."""
         if self._cache_is_fresh():
-            print("Using cached crime data:", self.cache_path)
+            self.logger.info("Using cached crime data:", self.cache_path)
             return self._read_cache()
         try:
             with urllib.request.urlopen(self.url, timeout=60) as resp:
                 raw = resp.read()
         except Exception as e:
             if os.path.exists(self.cache_path):
-                print(f"Crime download failed ({e}); using stale cache {self.cache_path}")
+                self.logger.exception(f"Crime download failed ({e}); using stale cache {self.cache_path}")
                 return self._read_cache()
             raise
         self._write_cache(raw)
