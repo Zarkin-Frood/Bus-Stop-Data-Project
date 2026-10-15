@@ -1,4 +1,5 @@
 import re
+import logging
 
 STOP_ENDPOINT = ("https://gis.h-gac.com/arcgis/rest/services/"
                  "Open_Data/Transportation/MapServer/17/query")
@@ -22,7 +23,7 @@ class BusStopService:
         self.endpoint = endpoint
         self.stops = []
         self.last_load_stats = {}
-        self.logger = logger    
+        self.logger = logger or logging.getLogger(__name__)
 
     def load_route_82(self):
         self.load_route("82")

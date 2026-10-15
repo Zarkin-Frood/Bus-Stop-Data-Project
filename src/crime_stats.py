@@ -4,6 +4,7 @@ import time
 import urllib.request
 from datetime import date, datetime, timedelta
 from io import StringIO
+import logging
 
 NIBRS_2025_URL = "https://www.houstontx.gov/police/cs/xls/NIBRSPublicView2025.csv"
 
@@ -51,7 +52,7 @@ class CrimeStatsService:
         self.cache_max_age_hours = cache_max_age_hours
         self.crimes = []
         self.last_load_stats = {}
-        self.logger = logger
+        self.logger = logger or logging.getLogger(__name__)
 
     # ---------- loading ----------
 
